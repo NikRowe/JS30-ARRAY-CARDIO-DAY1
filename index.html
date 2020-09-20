@@ -32,12 +32,14 @@
     // Array.prototype.filter() - returns however many items you filter for. 
     // 1. Filter the list of inventors for those who were born in the 1500's 
     const fifteen = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600) 
+    console.log("#1 Filter: ")
     console.table(fifteen)
 
 
     // Array.prototype.map() - returns an array of same length, manipulated how you have set.
     // 2. Give us an array of the inventors first and last names
     const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
+    console.log("#2 map: ")
     console.log(fullNames)
 
 
@@ -55,6 +57,7 @@
     //     return -1;
     //   }
     // })
+    console.log("#3 Sort: ")
     console.table(ordered)
 
 
@@ -63,6 +66,7 @@
       const totalYears = inventors.reduce((total, inventor) => {
         return total + (inventor.passed - inventor.year);
       }, 0)
+      console.log("#4 Reduce: ")
       console.log(totalYears);
 
 
@@ -72,7 +76,7 @@
       const personTwo = b.passed - b.year;
       return  personOne > personTwo ? -1 : 1; 
     })
-
+    console.log("#5 Sort with Varibles: ")
     console.table(oldest);
 
 
@@ -81,6 +85,8 @@
     const links = [...document.querySelectorAll('.mw-category a')]; //spread here to convert the Node List into an array so that we can use methods like map. //
     const boulevards = links.map(blvd => blvd.textContent) // maps through all links and creates a new array with just the textContent //
     const de = boulevards.filter(blvd => blvd.includes('de')) //uses include() method to filter the boulevards array for ones that have that string //
+    console.log("#6 Map & Filter from a URL: you will have to check GIT ")
+
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
@@ -89,6 +95,7 @@
       const [bLast, bFirst] = b.split(', ')
       aLast > bLast ? 1 : -1;
     })
+    console.log("#7 Filter: ")
     console.log(alpha)
 
 
@@ -102,6 +109,7 @@
       total[vehicle]++;
       return total
     }, {})
+    console.log("#8 Reduce Obj Oriented: ")
     console.log(instances)
 
 
